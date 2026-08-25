@@ -9,6 +9,19 @@ export const metadata: Metadata = {
   },
   description: "Private family finance dashboard for riburaju.com",
   robots: { index: false, follow: false }, // never let this private app be indexed
+  manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Family Budget",
+  },
 };
 
 export const viewport: Viewport = {
@@ -20,8 +33,6 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-// Inline, blocking script that applies the saved theme before first
-// paint so there's no light-mode flash for users who prefer dark.
 const themeInitScript = `
 (function () {
   try {
