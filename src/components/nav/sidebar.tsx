@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navGroups } from "@/lib/nav";
 import { cn } from "@/lib/utils";
-import { Wallet } from "lucide-react";
+import Image from "next/image";
 
 export function Sidebar({ role, familyName }: { role: "admin" | "member"; familyName: string }) {
   const pathname = usePathname();
@@ -12,8 +12,8 @@ export function Sidebar({ role, familyName }: { role: "admin" | "member"; family
   return (
     <aside className="hidden w-64 shrink-0 flex-col border-r border-border bg-card lg:flex">
       <div className="flex h-16 items-center gap-2 border-b border-border px-5">
-        <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-          <Wallet className="h-5 w-5" />
+        <div className="h-9 w-9 shrink-0 overflow-hidden rounded-xl">
+          <Image src="/icon-192.png" alt="" width={36} height={36} className="h-full w-full object-cover" />
         </div>
         <div className="min-w-0">
           <p className="truncate text-sm font-semibold leading-tight">{familyName}</p>
